@@ -1,0 +1,22 @@
+Resume,Name,Similarity,Actual,Predicted
+"John Doe
+Data Scientist with 3 years of experience in Python, Pandas, and scikit-learn.
+Worked on predictive modeling and customer segmentation projects.
+Comfortable with SQL, data cleaning, and visualization using Matplotlib.
+",resume1.txt,0.36833509915631685,1,0
+"Priya Sharma
+Machine Learning Engineer with 4 years of experience using TensorFlow and PyTorch.
+Skilled in NLP, feature engineering, and deep learning model optimization.
+Strong Python and SQL background.
+",resume2.txt,0.31789125083221076,1,0
+"Rahul Mehta
+Data Analyst with 2 years of experience in Excel, Tableau, and Power BI.
+Basic knowledge of Python and SQL.
+Interested in transitioning to Data Science.
+",resume3.txt,0.21299795067274363,0,0
+"John Doe
+Data Scientist with 3 years of experience in Python, Pandas, and scikit-learn.
+Built multiple machine learning models for customer churn and sales forecasting.
+Skilled in SQL, data cleaning, feature engineering, and model deployment using Streamlit.
+Comfortable with data visualization using Matplotlib and Seaborn.
+",resume4.txt,0.47686677973189523,0,0

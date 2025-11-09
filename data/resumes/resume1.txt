@@ -1,0 +1,4 @@
+John Doe
+Data Scientist with 3 years of experience in Python, Pandas, and scikit-learn.
+Worked on predictive modeling and customer segmentation projects.
+Comfortable with SQL, data cleaning, and visualization using Matplotlib.

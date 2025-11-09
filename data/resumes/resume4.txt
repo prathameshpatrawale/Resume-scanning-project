@@ -1,0 +1,5 @@
+John Doe
+Data Scientist with 3 years of experience in Python, Pandas, and scikit-learn.
+Built multiple machine learning models for customer churn and sales forecasting.
+Skilled in SQL, data cleaning, feature engineering, and model deployment using Streamlit.
+Comfortable with data visualization using Matplotlib and Seaborn.
