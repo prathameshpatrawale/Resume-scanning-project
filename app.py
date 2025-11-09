@@ -11,6 +11,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 import spacy
 from transformers import pipeline
 
+import spacy
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
+
 # ---------- Config ----------
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # small & fast
 nlp = spacy.load("en_core_web_sm")
@@ -189,3 +198,4 @@ if st.button("Process"):
     # export CSV
     csv = df.to_csv(index=False).encode('utf-8')
     st.download_button("Download full results CSV", data=csv, file_name="resume_scores.csv", mime="text/csv")
+
