@@ -1,4 +1,0 @@
-Priya Sharma
-Machine Learning Engineer with 4 years of experience using TensorFlow and PyTorch.
-Skilled in NLP, feature engineering, and deep learning model optimization.
-Strong Python and SQL background.

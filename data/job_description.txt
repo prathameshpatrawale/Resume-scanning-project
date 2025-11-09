@@ -1,7 +1,0 @@
-Job Title: Data Scientist
-
-We are looking for a Data Scientist skilled in Python, SQL, and Machine Learning.
-You will build predictive models using scikit-learn, TensorFlow, or PyTorch.
-Experience with data preprocessing, feature engineering, and model evaluation is required.
-Knowledge of NLP and data visualization (Matplotlib, Seaborn, Plotly) is a plus.
-Minimum 2 years of relevant experience preferred.
