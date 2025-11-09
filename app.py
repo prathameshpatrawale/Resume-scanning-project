@@ -24,33 +24,29 @@ COMMON_SKILLS = ["python", "sql", "pandas", "numpy", "scikit-learn", "tensorflow
                  "nlp", "computer vision", "docker", "aws", "spark", "hadoop", "git", "matplotlib"]
 
 # ---------- Helpers ----------
-def extract_text_from_pdf(file_bytes):
-    text = ""
-    with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
-        for page in pdf.pages:
-            page_text = page.extract_text()
-            if page_text:
-                text += page_text + "\n"
-    return text
-
-def extract_text_from_docx(file_bytes):
-    doc = docx.Document(io.BytesIO(file_bytes))
-    paragraphs = [p.text for p in doc.paragraphs]
-    return "\n".join(paragraphs)
-
 def extract_text(file):
-    # file: InMemoryUploadedFile
     name = file.name.lower()
-    content = file.read()
+    content = file.getvalue()  # safe: reads file content from memory buffer
+
     if name.endswith(".pdf"):
-        return extract_text_from_pdf(content)
-    if name.endswith(".docx"):
-        return extract_text_from_docx(content)
-    # txt or fallback
-    try:
-        return content.decode("utf-8", errors="ignore")
-    except:
-        return str(content)
+        text = ""
+        with pdfplumber.open(io.BytesIO(content)) as pdf:
+            for page in pdf.pages:
+                text += page.extract_text() or ""
+        return text
+
+    elif name.endswith(".docx"):
+        doc = docx.Document(io.BytesIO(content))
+        return "\n".join([p.text for p in doc.paragraphs])
+
+    elif name.endswith(".txt"):
+        try:
+            return content.decode("utf-8", errors="ignore")
+        except:
+            return str(content)
+
+    else:
+        return ""
 
 def extract_skills(text, skill_list=COMMON_SKILLS):
     text_lower = text.lower()
@@ -190,4 +186,5 @@ if st.button("Process"):
     # export CSV
     csv = df.to_csv(index=False).encode('utf-8')
     st.download_button("Download full results CSV", data=csv, file_name="resume_scores.csv", mime="text/csv")
+
 
