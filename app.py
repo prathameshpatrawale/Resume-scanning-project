@@ -10,15 +10,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import spacy
 from transformers import pipeline
-
 import spacy
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
-
 
 # ---------- Config ----------
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # small & fast
